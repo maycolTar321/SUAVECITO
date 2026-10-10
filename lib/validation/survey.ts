@@ -6,7 +6,7 @@ export const surveySchema = z.object({
     "Soy padre primerizo y mi bebé ya nació",
     "Estoy esperando a mi primer bebé",
     "Otra situación"
-  ], { required_error: "Por favor selecciona tu situación actual." }),
+  ]),
   edad: z.enum([
     "18 a 24 años",
     "25 a 34 años",
@@ -18,7 +18,7 @@ export const surveySchema = z.object({
     "Sí, la conozco",
     "La había escuchado nombrar",
     "No la conocía"
-  ], { required_error: "Por favor responde si conocías la marca." }),
+  ]),
 
   importancia_opinion: z.coerce.number().min(1).max(5),
   consulta_compra: z.enum([
@@ -28,7 +28,7 @@ export const surveySchema = z.object({
     "Personas que publican experiencias de compra en redes sociales",
     "No suelo consultar a otras personas",
     "Otro tipo de fuente"
-  ], { required_error: "Por favor selecciona a quién consultas." }),
+  ]),
   factor_decision: z.enum([
     "Precio",
     "Calidad y materiales",
@@ -36,7 +36,7 @@ export const surveySchema = z.object({
     "Recomendación de alguien de confianza",
     "Marca",
     "Diseño"
-  ], { required_error: "Por favor selecciona el factor principal." }),
+  ]),
 
   interes_compra: z.coerce.number().min(1).max(5),
   confianza_publicidad: z.coerce.number().min(1).max(5),
@@ -49,7 +49,7 @@ export const surveySchema = z.object({
     "Marca SUAVECITO",
     "Ninguno en particular",
     "Otro elemento"
-  ], { required_error: "Por favor selecciona el elemento que más influyó." }),
+  ]),
   probabilidad_consideracion: z.coerce.number().min(1).max(5),
 
   cambio_decision: z.enum([
@@ -57,26 +57,26 @@ export const surveySchema = z.object({
     "Tal vez, dependería de la recomendación",
     "No cambiaría mi decisión",
     "No estoy seguro/a"
-  ], { required_error: "Por favor selecciona una opción." }),
+  ]),
   tipo_recomendacion: z.enum([
     "Experiencia de otro padre o madre",
     "Opinión de un familiar o amigo",
     "Recomendación de un especialista",
     "Comentarios de compradores en internet",
     "Prefiero evaluar el producto por mi cuenta"
-  ], { required_error: "Por favor selecciona una opción." }),
+  ]),
   ayuda_confianza: z.enum([
     "Una experiencia real de compra",
     "Información sobre calidad y materiales",
     "Fotografías reales del producto",
     "Opiniones de varios compradores",
     "Información verificable sobre el producto"
-  ], { required_error: "Por favor selecciona una opción." }),
+  ]),
   diseno_favorito: z.enum([
     "DISEÑO 1",
     "DISEÑO 2",
     "DISEÑO 3"
-  ], { required_error: "Por favor elige tu diseño favorito." })
+  ])
 });
 
 export type SurveyFormValues = z.infer<typeof surveySchema>;

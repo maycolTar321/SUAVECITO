@@ -19,7 +19,7 @@ export default function EncuestaApp() {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   const { register, handleSubmit, formState: { errors }, watch, trigger } = useForm<SurveyFormValues>({
-    resolver: zodResolver(surveySchema),
+    resolver: zodResolver(surveySchema) as any,
   });
 
   const situacion = watch("situacion");
